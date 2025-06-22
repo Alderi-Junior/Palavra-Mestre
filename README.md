@@ -43,6 +43,7 @@ O botão Mostrar Caminho anima o percurso do autômato para a palavra testada.
 
 
 👥 Autores
+
 <img src="https://avatars.githubusercontent.com/u/72262704?s=400&u=44ab8fa5f402e33e0159c1b7848c3ffb72a5a5fe&v=4" width="80" />
 [Alderi](https://github.com/Alderi-Junior)
 
