@@ -30,7 +30,7 @@
     <AppXManifest Include="C:\Users\Junior\source\repos\PalavraMestre\PalavraMestre\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-06-19T20:50:42.559</Modified>
+      <Modified>2025-06-22T21:04:45.364</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -44,11 +44,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior\source\repos\PalavraMestre\PalavraMestre\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\PalavraMestre.dll">
       <PackagePath>PalavraMestre.dll</PackagePath>
-      <Modified>2025-06-19T20:50:42.194</Modified>
+      <Modified>2025-06-22T21:04:44.133</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior\source\repos\PalavraMestre\PalavraMestre\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>PalavraMestre.exe</PackagePath>
-      <Modified>2025-06-19T20:50:42.198</Modified>
+      <Modified>2025-06-22T21:04:44.192</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Junior\source\repos\PalavraMestre\PalavraMestre\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>

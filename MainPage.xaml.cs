@@ -138,7 +138,7 @@ public partial class MainPage : ContentPage
                 tapGesture.Tapped += (s, e) =>
                 {
                     celulaSelecionada = (row, col);
-                    //AtualizarDestaques();
+                    AtualizarDestaques();
                 };
 
                 labelCell.GestureRecognizers.Add(tapGesture);
@@ -146,7 +146,143 @@ public partial class MainPage : ContentPage
             }
         }
 
-        //AtualizarDestaques();
+        AtualizarDestaques();
+    }
+
+    private async void OnTestarEntrada(object sender, EventArgs e)
+    {
+        string palavra = PalavraVerificar.Text?.ToLower().Trim() ?? "";
+        var resultado = afd.VerificarPalavra(palavra);
+
+        if (resultado.Aceita)
+        {
+           await AnimarAceitacao("✅ " + resultado.Mensagem);
+        }
+        else
+        {
+            VerificacaoOutput.BackgroundColor = Colors.Transparent;
+            VerificacaoOutput.TextColor = Colors.DarkRed;
+            VerificacaoOutput.FontAttributes = FontAttributes.None;
+            VerificacaoOutput.Text = "❌ " + resultado.Mensagem;
+        }
+    }
+
+
+    private async void OnMostrarCaminho(object sender, EventArgs e)
+    {
+        string palavra = PalavraVerificar.Text?.ToLower().Trim() ?? "";
+        var caminho = afd.CaminhoDaPalavra(palavra);
+
+        if (caminho.Count == 0)
+        {
+            VerificacaoOutput.Text = "Não foi possível mostrar o caminho.";
+            return;
+        }
+
+        celulasComCor.Clear();
+        celulaSelecionada = null;
+        AtualizarDestaques();
+
+        foreach (var passo in caminho)
+        {
+            int row = afd.Nos.IndexOf(passo.EstadoAtual) + 1;
+            int col = afd.Simbolos.IndexOf(passo.Simbolo) + 1;
+
+            bool transicaoValida = passo.ProximoEstado != "❌";
+
+            celulasComCor[(row, col)] = transicaoValida ? Colors.LightGreen : Colors.Red;
+
+            celulaSelecionada = (row, col);
+
+            AtualizarDestaques();
+            await Task.Delay(500);
+        }
+
+        celulaSelecionada = null;
+        AtualizarDestaques();
+
+        var resultado = afd.VerificarPalavra(palavra);
+
+        if (resultado.Aceita)
+            await AnimarAceitacao("✅ " + resultado.Mensagem);
+        else
+        {
+            VerificacaoOutput.BackgroundColor = Colors.Transparent;
+            VerificacaoOutput.TextColor = Colors.DarkRed;
+            VerificacaoOutput.FontAttributes = FontAttributes.None;
+            VerificacaoOutput.Text = "❌ " + resultado.Mensagem;
+        }
+    }
+
+
+    void AtualizarDestaques()
+    {
+        foreach (var child in TabelaGrid.Children)
+        {
+            if (child is View view)
+            {
+                int r = Grid.GetRow(view);
+                int c = Grid.GetColumn(view);
+
+                if (view is Label label)
+                {
+                    if (celulasComCor.TryGetValue((r, c), out var cor))
+                    {
+                        label.BackgroundColor = cor;
+                    }
+                    else if (celulaSelecionada.HasValue)
+                    {
+                        var sel = celulaSelecionada.Value;
+
+                        if (r == sel.Row && c == sel.Col)
+                        {
+                            label.BackgroundColor = Colors.Orange;
+                        }
+                        else if (r == sel.Row)
+                        {
+                            label.BackgroundColor = Colors.Wheat;
+                        }
+                        else if (c == sel.Col)
+                        {
+                            label.BackgroundColor = Colors.Wheat;
+                        }
+                        else
+                        {
+                            label.BackgroundColor = Colors.LightYellow;
+                        }
+                    }
+                    else
+                    {
+                        label.BackgroundColor = Colors.LightYellow;
+                    }
+                }
+            }
+        }
+    }
+
+    private async Task AnimarAceitacao(string mensagem)
+    {
+        VerificacaoOutput.Text = mensagem;
+        VerificacaoOutput.TextColor = Colors.White;
+        VerificacaoOutput.FontAttributes = FontAttributes.Bold;
+
+        for (int i = 0; i < 3; i++)
+        {
+            VerificacaoOutput.BackgroundColor = Colors.Green;
+            await Task.Delay(200);
+            VerificacaoOutput.BackgroundColor = Colors.Transparent;
+            await Task.Delay(200);
+        }
+
+        VerificacaoOutput.BackgroundColor = Colors.Green;
+    }
+    private void OnRemoverPalavra(object sender, EventArgs e)
+    {
+        if (sender is Button btn && btn.CommandParameter is string palavra)
+        {
+            palavrasRegistradas.Remove(palavra);
+            DesenharTabela();
+        }
     }
 
 

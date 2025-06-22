@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PalavraMestre")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+1245b6c2fbb3c8406942578e97bbaa17c6b95569")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+8908b540f0f98d625e765cf344de8552b26ed0ae")]
 [assembly: System.Reflection.AssemblyProductAttribute("PalavraMestre")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PalavraMestre")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
