@@ -18,12 +18,10 @@ Esta versão já vem com todos os arquivos necessários. Não é necessário ins
 ✅ Passos:
 Vá para o caminho \PalavraMestre\bin\Release\net8.0-windows10.0.19041.0/RELEASE(ela contém PalavraMestre.exe e várias outras DLLs).
 
-Extraia o conteúdo para qualquer pasta no seu computador.
+Encontre o arquivo PalavraMestre.exe
 
 Dê duplo clique no arquivo:
 
-Copiar
-Editar
 PalavraMestre.exe
 O aplicativo será iniciado com a interface gráfica.
 
