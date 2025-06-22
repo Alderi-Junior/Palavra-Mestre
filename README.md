@@ -32,17 +32,6 @@ O aplicativo será iniciado com a interface gráfica.
 
 C#
 
-📁 Estrutura original do projeto
-bash
-Copiar
-Editar
-PalavraMestre/
-├── MainPage.xaml           # Interface visual
-├── MainPage.xaml.cs        # Lógica da interface
-├── Core/AfdEngine.cs       # Núcleo do simulador de AFD
-├── App.xaml                # Configuração da aplicação
-├── Platforms/              # Código específico para Windows/Android/etc.
-├── PalavraMestre.csproj    # Arquivo de configuração do projeto MAUI
 💡 Como o projeto funciona
 Ao digitar uma palavra e clicar em Construir AFD, o app gera um autômato com transições baseadas na palavra.
 
@@ -52,16 +41,10 @@ Você pode verificar se outras palavras são aceitas com base nesse autômato.
 
 O botão Mostrar Caminho anima o percurso do autômato para a palavra testada.
 
-🧳 Exportação
-O executável foi gerado com:
-
-bash
-Copiar
-Editar
-dotnet publish -f net8.0-windows10.0.19041.0 -c Release -p:WindowsAppSDKSelfContained=true -p:WindowsPackageType=None
-Isso garante que o app funcione mesmo sem .NET instalado no PC de destino.
 
 👥 Autores
-Bocha 🧠
+<img src="https://avatars.githubusercontent.com/u/72262704?s=400&u=44ab8fa5f402e33e0159c1b7848c3ffb72a5a5fe&v=4" width="80" />
+[Alderi](https://github.com/Alderi-Junior)
 
-Japa 💡
+<img src="https://avatars.githubusercontent.com/u/149211310?v=4" width="80" />
+[Otavio](https://github.com/otaviojapa)
