@@ -1,0 +1,1 @@
+C:\Users\Junior\source\repos\PalavraMestre\PalavraMestre\PalavraMestre.csproj;x64

@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="PalavraMestre.MainPage"
+    BackgroundColor="#fff8e7"
+    Title="🎉 PalavraMestre 🎉 By Bocha e Japa">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="25">
+            <Label Text="🎈 PalavraMestre 🎈"
+                   FontSize="26"
+                   FontAttributes="Bold"
+                   TextColor="#ff6f00"
+                   HorizontalOptions="Center"
+                   FontFamily="Comic Sans MS"/>
+
+            <Frame BackgroundColor="#ffffff" Padding="20" CornerRadius="15" HasShadow="True">
+                <VerticalStackLayout Spacing="12">
+                    <Label Text="Digite uma nova palavra para construir o AFD:"
+                           FontSize="18"
+                           TextColor="#555"
+                           FontFamily="Comic Sans MS"/>
+                    <Entry x:Name="InputText" 
+                           Placeholder="ex: abacaxi 🍍" 
+                           BackgroundColor="#fff0c1" 
+                           TextColor="#555"
+                           FontFamily="Comic Sans MS"/>
+
+                    <Button Text="✨ Construir AFD ✨"
+                            Clicked="OnConstruirAfd"
+                            BackgroundColor="#ff9800"
+                            TextColor="White"
+                            FontAttributes="Bold"
+                            CornerRadius="12"
+                            FontSize="16"/>
+
+                    <Button Text="🗑️ Limpar AFD"
+                            Clicked="OnLimparAfd"
+                            BackgroundColor="#b71c1c"
+                            TextColor="White"
+                            CornerRadius="12"
+                            FontSize="14"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Label Text="Palavras Registradas:"
+       FontSize="18"
+       FontAttributes="Bold"
+       TextColor="#4e342e"
+       FontFamily="Comic Sans MS"/>
+
+            <CollectionView x:Name="PalavrasListView"
+                HeightRequest="120"
+                BackgroundColor="#fff0c1"
+                Margin="0,5,0,0">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Padding="8" Margin="5,2" CornerRadius="10" BackgroundColor="#ffcc80">
+                            <HorizontalStackLayout>
+                                <Label Text="{Binding}" FontFamily="Comic Sans MS" TextColor="#4e342e" VerticalOptions="Center"/>
+                                <Button Text="❌" BackgroundColor="Transparent" TextColor="#b71c1c" 
+                            Clicked="OnRemoverPalavra" CommandParameter="{Binding}" />
+                            </HorizontalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+
+            <Frame BackgroundColor="#ffffff" Padding="20" CornerRadius="15" HasShadow="True">
+                <VerticalStackLayout Spacing="12">
+                    <Label Text="Verifique se uma palavra é aceita pelo AFD:"
+                           FontSize="18"
+                           TextColor="#555"
+                           FontFamily="Comic Sans MS"/>
+                    <Entry x:Name="PalavraVerificar" 
+                           Placeholder="ex: banana 🍌" 
+                           BackgroundColor="#fff0c1" 
+                           TextColor="#555"
+                           FontFamily="Comic Sans MS"/>
+
+                    <HorizontalStackLayout Spacing="10">
+                        <Button Text="✅ Testar Palavra"
+                                Clicked="OnTestarEntrada"
+                                BackgroundColor="#4caf50"
+                                TextColor="White"
+                                CornerRadius="12"
+                                FontSize="16"/>
+                        <Button Text="🔍 Mostrar Caminho"
+                                Clicked="OnMostrarCaminho"
+                                BackgroundColor="#ffd600"
+                                TextColor="Black"
+                                CornerRadius="12"
+                                FontSize="16"/>
+                    </HorizontalStackLayout>
+
+                    <Label x:Name="VerificacaoOutput"
+                           FontAttributes="Italic"
+                           TextColor="#d84315"
+                           FontSize="16"
+                           FontFamily="Comic Sans MS"/>
+                    <Label x:Name="OutputLabel"
+                           TextColor="Red"
+                           FontSize="14"
+                           FontFamily="Comic Sans MS"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Label Text="🚀 Tabela de Transições"
+                   FontAttributes="Bold"
+                   FontSize="20"
+                   TextColor="#3e2723"
+                   FontFamily="Comic Sans MS"/>
+
+            <ScrollView Orientation="Both">
+                <Grid x:Name="TabelaGrid"
+                      ColumnSpacing="2"
+                      RowSpacing="2"
+                      BackgroundColor="#ffe082"
+                      Padding="5"/>
+            </ScrollView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
