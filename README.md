@@ -80,6 +80,60 @@ O arquivo estará em:
 
 bin\Release\net8.0-windows10.0.19041.0\win-x64\publish\Palavra_Mestre.exe
 
+🎨 Interface Interativa e Amigável
+O Palavra Mestre foi projetado com uma abordagem lúdica e educacional, inspirada em softwares infantis, para demonstrar domínio do .NET MAUI e criar uma experiência mais envolvente.
+
+✨ Características da Interface
+Elemento	Descrição	Objetivo
+Chips Coloridos	Palavras são exibidas como tags estilo "cápsulas" (ex: 🍍 abacaxi)	Facilitar a visualização e remoção
+Cores Vibrantes	Tons pastéis e contrastes suaves (laranja, amarelo, verde)	Chamar atenção sem poluir a tela
+Ícones Expressivos	Emojis e símbolos (🎉, ❌, ✅) para ações	Tornar o uso intuitivo
+Animações Suaves	Efeitos de confete ao aceitar palavras e fade-in/fade-out nos chips	Dar feedback visual
+Fontes Brincalhonas	Uso de Comic Sans MS em labels e botões	Simular um software infantil
+Layout Organizado	Agrupamento lógico (AFD Builder × Testador) com espaçamento generoso	Evitar poluição visual
+🎮 Interatividade
+Toque nos Chips: Efeito de "apertar" ao clicar em uma palavra
+
+Feedback Imediato:
+
+Palavra aceita → Animação de confete + mensagem verde
+
+Palavra rejeitada → Balão vermelho com explicação
+
+Tabela de Transições clicável:
+
+Células destacam-se ao passar o mouse (simulando um jogo de tabuleiro)
+
+📚 Inspiração Educacional
+Metáfora de "Construir um Robô":
+
+Cada palavra adicionada "monta" o autômato como peças de Lego
+
+Modo "Passo a Passo":
+
+Ao clicar em "🔍 Mostrar Caminho", o sistema pisca os estados visitados como um jogo de adivinhação
+
+💡 Por que esse design?
+Apesar de ser um projeto técnico (AFD), a interface abstrai a complexidade usando elementos familiares a crianças, demonstrando como o MAUI pode adaptar-se a diferentes públicos mantendo a funcionalidade.
+
+Exemplo de Uso com Crianças (Fictício):
+
+"Vamos ensinar o robô a reconhecer frutas! Digite 'banana'..."
+
+"Agora teste 'bana'... Ops! Falta uma letra. O robô não entendeu!"
+
+(Obs.: O projeto não é realmente infantil, mas a interface simula essa abordagem para fins didáticos.)
+
+Próximos Passos (Se Desejado):
+
+Adicionar sons de feedback (ex.: aplausos ao acertar)
+
+Incluir um modo história com personagens guias
+
+Implementar badges/recompensas por palavras aprendidas
+
+Essa escolha de design mostra flexibilidade do MAUI para criar desde apps sérios até experiências imersivas! 🧩
+
 🎨 Preview da Interface
 ![image](https://github.com/user-attachments/assets/c46db2f3-718b-45d1-8284-d859b2b3258a)
 
